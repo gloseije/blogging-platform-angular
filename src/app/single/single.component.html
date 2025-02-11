@@ -1,0 +1,115 @@
+<div class="container mx-auto px-5 lg:px-20 pt-24 pb-16">
+    <div class="max-w-3xl mx-auto">
+        <!-- Image du post -->
+        <img src="/banner.jpg" alt="Image du post" class="w-full object-cover rounded-lg aspect-4/3">
+
+        <!-- Titre du post -->
+        <h1 class="text-3xl font-bold mt-6">Titre du Post</h1>
+
+        <!-- Métadonnées (auteur et date) -->
+        <div class="flex items-center text-gray-600 mt-2">
+            <span class="text-sm"><a href="#" class="text-blue-500 hover:underline">Marketing</a></span><!-- catégories -->
+            <span class="mx-2">•</span>
+            <span class="text-sm">Par <a href="#" class="text-blue-500 hover:underline">Auteur</a></span><!-- Auteur -->
+            <span class="mx-2">•</span>
+            <span class="text-sm">10 octobre 2023</span><!-- date -->
+        </div>
+
+        <!-- Contenu du post -->
+        <p class="mt-4 text-gray-700 leading-relaxed">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+            ex
+            ea commodo consequat.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+            ex
+            ea commodo consequat.<br>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+            ex
+            ea commodo consequat.<br>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+            ex
+            ea commodo consequat.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+            ex
+            ea commodo consequat.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+            ex
+            ea commodo consequat.
+        </p>
+
+        <!-- Section Likes et commentaires -->
+        <div class="mt-6 flex items-center space-x-2">
+            <button type="button"
+                class="flex items-center text-gray-600 hover:text-red-500 transition duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
+                <span class="ml-2">123 J'aime</span><!-- Likes et nombre des likes -->
+            </button>
+            <span class="text-gray-600">et</span>
+            <div class="flex items-center text-gray-600 transition duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                </svg>
+                <span class="ml-2">2 commentaires</span><!-- nombre des commentaires -->
+            </div>
+        </div>
+
+        <!-- Section Commentaires -->
+        <div class="mt-8">
+            <h2 class="text-xl font-bold text-gray-800">Commentaires</h2>
+
+            <!-- Formulaire pour ajouter un commentaire -->
+            <form class="mt-4">
+                <textarea
+                    class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    rows="3" placeholder="Ajouter un commentaire..."></textarea>
+                <button type="submit"
+                    class="mt-3 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition duration-300">Commenter</button>
+            </form>
+
+            <!-- Liste des commentaires -->
+            <div class="mt-6 space-y-4">
+                <!-- Commentaire 1 -->
+                <div class="flex items-start space-x-4">
+                    <img src="https://via.placeholder.com/40" alt="Avatar" class="w-10 h-10 rounded-full">
+                    <div>
+                        <p class="font-semibold">Utilisateur 1</p>
+                        <p class="text-gray-600">C'est un super post ! Merci pour le partage.</p>
+                        <div class="flex items-center text-gray-500 text-sm mt-2">
+                            <button class="hover:text-blue-500">Répondre</button>
+                            <span class="mx-2">•</span>
+                            <span>Il y a 2 heures</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Commentaire 2 -->
+                <div class="flex items-start space-x-4">
+                    <img src="https://via.placeholder.com/40" alt="Avatar" class="w-10 h-10 rounded-full">
+                    <div>
+                        <p class="font-semibold">Utilisateur 2</p>
+                        <p class="text-gray-600">J'adore ce sujet, continuez comme ça !</p>
+                        <div class="flex items-center text-gray-500 text-sm mt-2">
+                            <button class="hover:text-blue-500">Répondre</button>
+                            <span class="mx-2">•</span>
+                            <span>Il y a 5 heures</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
