@@ -19,6 +19,19 @@ export class InscriptionComponent {
     password: new FormControl('')
   })
 
-  save() {}
+  save() {
+    this.service.inscription(
+      this.inscriptionForm.value.fullName??"",
+      this.inscriptionForm.value.email??"",
+      this.inscriptionForm.value.password??""
+    ).then(response => console.log(response))
+    
+    this.inscriptionForm = new FormGroup({
+      fullName: new FormControl(''),
+      email: new FormControl(''),
+      password: new FormControl('')
+    })
+    this.router.navigate(['/connexion'])
+  }
 
 }

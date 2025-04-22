@@ -15,15 +15,9 @@
         </div>
     </div>
     <div class=" space-x-4 ">
-        <app-article-dashboard></app-article-dashboard>
-        <app-article-dashboard></app-article-dashboard>
-        <app-article-dashboard></app-article-dashboard>
-        <app-article-dashboard></app-article-dashboard>
-        <app-article-dashboard></app-article-dashboard>
-        <app-article-dashboard></app-article-dashboard>
-        <app-article-dashboard></app-article-dashboard>
-        <app-article-dashboard></app-article-dashboard>
-        <app-article-dashboard></app-article-dashboard>
-        <app-article-dashboard></app-article-dashboard>
+        @if (!hasPosts) {
+            <h3 class="text-center text-gray-600 text-2xl my-40">Aucun article disponible</h3>
+        }
+        <app-article-dashboard *ngFor="let post of posts" [post]="post"></app-article-dashboard>
     </div>
 </div>

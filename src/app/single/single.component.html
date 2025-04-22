@@ -1,46 +1,25 @@
 <div class="container mx-auto px-5 lg:px-20 pt-24 pb-16">
     <div class="max-w-3xl mx-auto">
         <!-- Image du post -->
-        <img src="/banner.jpg" alt="Image du post" class="w-full object-cover rounded-lg aspect-4/3">
+        <img src="{{ post.image }}" alt="Image du post" class="w-full object-cover rounded-lg aspect-video">
 
         <!-- Titre du post -->
-        <h1 class="text-3xl font-bold mt-6">Titre du Post</h1>
+        <h1 class="text-3xl font-bold mt-6">
+            {{ post.title }}
+        </h1>
 
         <!-- Métadonnées (auteur et date) -->
         <div class="flex items-center text-gray-600 mt-2">
-            <span class="text-sm"><a href="#" class="text-blue-500 hover:underline">Marketing</a></span><!-- catégories -->
+            <span class="text-sm"><a href="#" class="text-blue-500 hover:underline">{{ category }}</a></span><!-- catégories -->
             <span class="mx-2">•</span>
-            <span class="text-sm">Par <a href="#" class="text-blue-500 hover:underline">Auteur</a></span><!-- Auteur -->
+            <span class="text-sm">Par <a href="#" class="text-blue-500 hover:underline">{{ author.fullName }}</a></span><!-- Auteur -->
             <span class="mx-2">•</span>
-            <span class="text-sm">10 octobre 2023</span><!-- date -->
+            <span class="text-sm">{{ post.updatedAt }}</span><!-- date -->
         </div>
 
         <!-- Contenu du post -->
         <p class="mt-4 text-gray-700 leading-relaxed">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-            ex
-            ea commodo consequat.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-            ex
-            ea commodo consequat.<br>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-            ex
-            ea commodo consequat.<br>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-            ex
-            ea commodo consequat.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-            ex
-            ea commodo consequat.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-            ex
-            ea commodo consequat.
+            {{ post.content }}
         </p>
 
         <!-- Section Likes et commentaires -->
@@ -82,7 +61,7 @@
             <div class="mt-6 space-y-4">
                 <!-- Commentaire 1 -->
                 <div class="flex items-start space-x-4">
-                    <img src="https://via.placeholder.com/40" alt="Avatar" class="w-10 h-10 rounded-full">
+                    <img src="/user.png" alt="Avatar" class="w-10 h-10 rounded-full">
                     <div>
                         <p class="font-semibold">Utilisateur 1</p>
                         <p class="text-gray-600">C'est un super post ! Merci pour le partage.</p>

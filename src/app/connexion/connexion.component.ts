@@ -18,6 +18,20 @@ export class ConnexionComponent {
     password: new FormControl('')
   })
 
-  login() {}
+  login() {
+    this.service.connexion(
+      this.connexionForm.value.email??"",
+      this.connexionForm.value.password??""
+    ).then(response => {
+      localStorage.setItem("auth", JSON.stringify(response))
+      this.router.navigate(['/'])
+    } ).then(() => location.reload())
+    
+    this.connexionForm = new FormGroup({
+      email: new FormControl(''),
+      password: new FormControl('')
+    })
+  }
+
 
 }

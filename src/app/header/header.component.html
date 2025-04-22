@@ -62,13 +62,15 @@
 
                 <!-- Profil utilisateur -->
                 <div class="relative ml-3">
-                    <div>
+                    <div 
+                        class="flex justify-between items-center gap-2"
+                        (click)="showProfilMenu()"
+                    >
                         <button type="button"
                             class="relative flex rounded-full bg-gray-800 text-sm focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden"
                             id="user-menu-button" 
                             aria-expanded="false" 
                             aria-haspopup="true"
-                            (click)="showProfilMenu()"
                         >
                             <span class="absolute -inset-1.5"></span>
                             <span class="sr-only">Open user menu</span>
@@ -76,42 +78,53 @@
                                 src="/user.png"
                                 alt="">
                         </button>
+                        @if (isConnected) {
+                            <p class="font-semibold text-white">
+                                {{ auth.user.fullName }}
+                            </p>
+                        }
                     </div>
 
                     <!-- Menu déroulant du profil utilisateur, afficher/masquer en fonction de l'état du menu. -->
                     @if (profileMenu) {
-                    <form
+                    <div
                         class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 ring-1 shadow-lg ring-black/5 focus:outline-hidden"
                         role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
 
                         <!-- Connexion et inscription -->
+                        @if (!isConnected) {
                         <a 
+                            [routerLink]="('/connexion')"
                             class="block px-4 py-2 text-sm text-gray-700"
                             (click)="showProfilMenu()"
                             role="menuitem"
                         >Se connecter</a>
                         <a 
+                            [routerLink]="('/inscription')"
                             class="block px-4 py-2 text-sm text-gray-700"
                             (click)="showProfilMenu()"
                             role="menuitem"
                         >Créer un compte</a>
+                        }
 
                         <!-- Afficher une fois l'utilisateur connecté -->
+                        @if (isConnected) {
                         <a 
                             [routerLink]="('/dashboard')" 
                             (click)="showProfilMenu()"
                             class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
-                            id="user-menu-item-1">Tableau de bord</a>
+                            id="user-menu-item-1">Mes articles</a>
                         <a 
                             (click)="showProfilMenu()"
                             class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
                             id="user-menu-item-0">Mon profil</a>
                         <a 
                             class="block px-4 py-2 text-sm text-gray-700"
-                            (click)="showProfilMenu()"
+                            (click)="deconnexion()"
                             role="menuitem" tabindex="-1"
                             id="user-menu-item-2">Se déconnecter</a>
-                    </form>
+                        }
+                    </div>
                     }
                 </div>
             </div>
